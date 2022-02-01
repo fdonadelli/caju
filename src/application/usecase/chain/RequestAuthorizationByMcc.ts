@@ -29,16 +29,4 @@ export default class RequestAuthorizationByMcc implements RequestAuthorization {
             ;(this.#successor as RequestAuthorization).handle(input)
         }
     }
-    
-    // async execute(input: RequestAuthorizationInput): Promise<RequestAuthorizationOutput> {
-    //     const benefit = await this.benefitsRepository.findBenefitByMcc(input.mcc);
-    //     if(!benefit) return new RequestAuthorizationOutput("07");
-    //     const accountBenefit = await this.accountBenefitsRepository.findAccountBenefits(input.account, benefit.idType);
-    //     if(!accountBenefit) return new RequestAuthorizationOutput("07");
-    //     if(accountBenefit.amount < input.totalAmount) return new RequestAuthorizationOutput("51");
-    //     accountBenefit.amount = accountBenefit.debit(input.totalAmount);
-    //     if(this.accountBenefitsRepository.save(accountBenefit)) new RequestAuthorizationOutput("00") ;
-    //     const output = new RequestAuthorizationOutput("00");
-    //     return  output;
-    // };
 }
